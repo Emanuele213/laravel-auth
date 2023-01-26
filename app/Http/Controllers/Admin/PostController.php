@@ -15,7 +15,14 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        //prendere la lista dei dati
+        $posts = Post::paginate(5);
+
+        //$posts->dd();
+
+        return view('admin.posts.index', [
+            'posts' => $posts,
+        ]);
     }
 
     /**
@@ -47,7 +54,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('admin.posts.show', compact('post'));
     }
 
     /**
@@ -81,6 +88,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+
+        return redirect()->route('admin.posts.index')->with('success_delete', $post->id);
     }
 }

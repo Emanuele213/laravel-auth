@@ -30,3 +30,22 @@ window.Vue = require('vue');
 // const app = new Vue({
 //     el: '#app',
 // });
+
+
+const eleOverlay = document.querySelector('.overlay');
+console.log(eleOverlay)
+if (eleOverlay) {
+    const btnsDelete = document.querySelectorAll('.btn-delete-me');
+    btnsDelete.forEach(btn => {
+        btn.addEventListener('click', function () {
+            eleOverlay.classList.remove('d-none');
+            eleOverlay.querySelector('form').setAttribute('action', 'http://localhost:8000/admin/posts/' + this.dataset.id)
+        })
+    })
+
+    const eleBtnClose = eleOverlay.querySelector('.btn-close-me');
+
+    eleBtnClose.addEventListener('click', function() {
+        eleOverlay.classList.add('d-none');
+    })
+}
