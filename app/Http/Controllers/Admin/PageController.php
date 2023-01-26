@@ -5,17 +5,17 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
-class HomeController extends Controller
+class PageController extends Controller
 {
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function dashboard()
     {
         $user = Auth::user();
 
-        return view('Admin.home', compact('user'));
+        return view('admin.dashboard', compact('user'));
     }
 }
