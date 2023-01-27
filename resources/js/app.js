@@ -33,7 +33,6 @@ window.Vue = require('vue');
 
 
 const eleOverlay = document.querySelector('.overlay');
-console.log(eleOverlay)
 if (eleOverlay) {
     const btnsDelete = document.querySelectorAll('.btn-delete-me');
     btnsDelete.forEach(btn => {

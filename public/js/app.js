@@ -5075,7 +5075,6 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime
 // });
 
 var eleOverlay = document.querySelector('.overlay');
-console.log(eleOverlay);
 if (eleOverlay) {
   var btnsDelete = document.querySelectorAll('.btn-delete-me');
   btnsDelete.forEach(function (btn) {
